@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-emerald hover:bg-emerald text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105;
+  }
+  .btn-secondary {
+    @apply bg-lapis hover:bg-lapis text-white font-bold py-3 px-6 rounded-full transition-all duration-300;
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  }
+}
