@@ -8,29 +8,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lapis: '#0F4C75',
-        ruby: '#D32F2F',
-        emerald: '#2E8B57',
-        sand: '#F4E4BC',
-        stone: '#A9A9A9',
-        brown: '#8B4513',
-        gold: '#FFD700',
+        lapis: {
+          DEFAULT: '#0F4C75',
+          light: '#3282B8',
+          dark: '#1B262C',
+        },
+        charcoal: '#121212',
+        sunrise: '#FFD700',
+        snow: '#FFFFFF',
+      },
+      borderRadius: {
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        '4xl': '3rem',
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'sunrise-gradient': 'linear-gradient(to right, #0F4C75, #FFD700)',
+      }
     },
   },
   plugins: [],
-  safelist: [
-    'from-gold-400',
-    'to-gold-400',
-    'from-emerald-400',
-    'to-emerald-400',
-    'from-ruby-400',
-    'to-ruby-400',
-    'from-lapis-400',
-    'to-lapis-400',
-  ],
 }
