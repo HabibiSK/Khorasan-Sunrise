@@ -140,16 +140,6 @@ export default function Home() {
           start: 'top 80%',
         },
       })
-
-      // Background gradient movement
-      gsap.to(".bg-glow", {
-        x: '20%',
-        y: '20%',
-        duration: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      })
     })
 
     return () => ctx.revert()
@@ -157,10 +147,6 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
-      {/* Background Glow */}
-      <div className="bg-glow fixed top-[-20%] left-[-20%] w-[60%] h-[60%] bg-lapis/20 blur-[150px] rounded-full pointer-events-none z-0" />
-      <div className="bg-glow fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-sunrise/10 blur-[150px] rounded-full pointer-events-none z-0" />
-
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <MountainParallax />
@@ -214,9 +200,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 md:grid md:grid-cols-2 md:overflow-visible md:snap-none md:px-0 lg:grid-cols-3 xl:grid-cols-3 scrollbar-hide">
           {tours.map((tour, idx) => (
-            <div key={idx} className="tour-card">
+            <div key={idx} className="tour-card min-w-[85vw] md:min-w-0 snap-center">
               <TourCard tour={tour} />
             </div>
           ))}

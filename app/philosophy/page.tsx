@@ -1,85 +1,92 @@
-import Image from 'next/image'
+'use client'
 
-export default function Philosophy() {
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
+import PageHero from '../../components/PageHero'
+
+gsap.registerPlugin(ScrollTrigger)
+
+export default function PhilosophyPage() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".reveal-text", {
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+      })
+    })
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt="Afghanistan landscape"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        </div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4 text-gold-400">
-            Our Philosophy
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            Social impact, cultural preservation, and authentic experiences.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="Our Philosophy" 
+        subtitle="Social impact, cultural preservation, and authentic experiences that leave a lasting mark on the world."
+        accent="Soul"
+      />
 
-      {/* Philosophy Content */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section ref={containerRef} className="py-32 px-4 max-w-5xl mx-auto">
+        <div className="space-y-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center reveal-text">
             <div>
-              <h2 className="text-4xl font-serif font-bold mb-6 text-lapis-800">
-                Our Commitment
+              <span className="text-sunrise font-bold tracking-[0.2em] uppercase text-xs mb-4 block">The First Pillar</span>
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-snow mb-8">
+                Empowerment
               </h2>
-              <p className="text-stone-600 text-lg mb-6">
+              <p className="text-xl text-snow/70 leading-relaxed font-light mb-12">
                 We believe tourism should benefit local communities and preserve cultural heritage. Our tours and accommodations are designed to empower Afghan women, support artisans, and promote sustainable development.
               </p>
-              <p className="text-stone-600 text-lg">
-                By choosing Khorasan, you contribute directly to social projects and help maintain Afghanistan's rich traditions for future generations.
-              </p>
+              <div className="w-16 h-[2px] bg-sunrise" />
             </div>
-            <div>
-              <Image
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Afghan artisans"
-                width={600}
-                height={400}
-                className="rounded-lg"
-              />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] shadow-2xl border border-snow/10">
+               <Image 
+                 src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Afghan empowerment"
+                 fill
+                 className="object-cover mask-radial"
+               />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Social Impact Highlights */}
-      <section className="py-16 bg-lapis-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-serif font-bold text-center mb-12 text-lapis-800">
-            Social Impact Highlights
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-4 text-emerald-600">85%</div>
-              <h3 className="text-2xl font-bold mb-2 text-lapis-800">Local Employment</h3>
-              <p className="text-stone-600">
-                A significant portion of our revenue goes directly to local guides, artisans, and service providers.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center flex-row-reverse reveal-text">
+            <div className="md:order-2">
+              <span className="text-sunrise font-bold tracking-[0.2em] uppercase text-xs mb-4 block">The Second Pillar</span>
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-snow mb-8">
+                Authenticity
+              </h2>
+              <p className="text-xl text-snow/70 leading-relaxed font-light mb-12">
+                We shun the superficial tourist trail. Every journey we craft is rooted in genuine human connection, shared meals, and authentic cultural immersion that goes beyond the surface.
               </p>
+              <div className="w-16 h-[2px] bg-sunrise" />
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-4 text-emerald-600">12</div>
-              <h3 className="text-2xl font-bold mb-2 text-lapis-800">Women's Cooperatives</h3>
-              <p className="text-stone-600">
-                We support multiple women's artisan groups through direct purchases and tourism revenue.
-              </p>
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] shadow-2xl border border-snow/10 md:order-1">
+               <Image 
+                 src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
+                 alt="Afghan authenticity"
+                 fill
+                 className="object-cover mask-radial"
+               />
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-4 text-emerald-600">500+</div>
-              <h3 className="text-2xl font-bold mb-2 text-lapis-800">Community Members</h3>
-              <p className="text-stone-600">
-                Our initiatives have positively impacted hundreds of community members across Afghanistan.
-              </p>
-            </div>
+          </div>
+
+          <div className="reveal-text text-center py-32 bg-charcoal/50 backdrop-blur-xl border border-snow/5 rounded-[4rem] shadow-2xl">
+             <h3 className="text-4xl md:text-6xl font-serif font-bold text-snow mb-12 italic">
+               "A guest is a gift from God."
+             </h3>
+             <p className="text-xl text-snow/60 max-w-2xl mx-auto leading-relaxed">
+               This ancient Afghan proverb is the cornerstone of our business. We treat every traveler not as a customer, but as an honored guest in our home.
+             </p>
           </div>
         </div>
       </section>

@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Sunrise } from 'lucide-react'
 
+import Magnetic from './Magnetic'
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -21,7 +23,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/tours', label: 'Tours' },
+    { href: '/accommodations', label: 'Accommodations' },
     { href: '/about', label: 'About' },
+    { href: '/philosophy', label: 'Philosophy' },
     { href: '/safety', label: 'Safety' },
     { href: '/contact', label: 'Contact' },
   ]
@@ -44,7 +48,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden xl:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
@@ -56,14 +60,16 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button className="btn-sunrise py-2 px-6 text-sm">
-            Start Trip
-          </button>
+          <Magnetic>
+            <button className="btn-sunrise py-2 px-6 text-sm">
+              Start Trip
+            </button>
+          </Magnetic>
         </nav>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-snow"
+          className="xl:hidden text-snow"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -78,7 +84,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            <div className="absolute top-full left-0 w-full bg-charcoal/95 backdrop-blur-2xl border-b border-snow/5 py-12 px-6 flex flex-col items-center gap-8 md:hidden">
+            <div className="absolute top-full left-0 w-full bg-charcoal/95 backdrop-blur-2xl border-b border-snow/5 py-12 px-6 flex flex-col items-center gap-6 xl:hidden text-center">
               {navLinks.map((link) => (
                 <Link 
                   key={link.href} 

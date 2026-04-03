@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   description: 'Authentic journeys through the land of the sunrise. Discover the beauty and culture of Afghanistan with Khorasan-Sunrise.',
 }
 
+import SharedBackground from '../components/SharedBackground'
+
+import CustomCursor from '../components/CustomCursor'
+
+import PageTransition from '../components/PageTransition'
+
+import MobileDock from '../components/MobileDock'
+
 export default function RootLayout({
   children,
 }: {
@@ -20,11 +28,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${playfair.className} bg-charcoal text-snow`}>
+      <body className={`${inter.className} ${playfair.className} bg-charcoal text-snow antialiased`}>
+        <SharedBackground />
+        <CustomCursor />
+        <MobileDock />
         <SmoothScroll>
           <Navbar />
-          <main className="pt-0 overflow-hidden">
-            {children}
+          <main className="pt-0 overflow-hidden relative">
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
           <Footer />
         </SmoothScroll>
