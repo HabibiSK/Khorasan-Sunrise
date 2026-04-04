@@ -130,11 +130,11 @@ export default function Home() {
 
       // Staggered Reveal for KHORASAN
       gsap.from(".char", {
-        y: 100,
+        y: 120,
         opacity: 0,
-        duration: 1,
+        duration: 1.2,
         ease: "power4.out",
-        stagger: 0.05,
+        stagger: 0.08,
         delay: 0.2
       })
 
@@ -177,7 +177,7 @@ export default function Home() {
             </span>
           </div>
           <div className="relative group mb-8">
-            <div className="sunrise-glow absolute inset-0 bg-sunrise/20 blur-[100px] rounded-full scale-0 opacity-0 pointer-events-none" />
+            <div className="sunrise-glow absolute -inset-32 bg-sunrise/40 blur-[140px] rounded-full scale-0 opacity-0 pointer-events-none mix-blend-screen" />
             <h1 ref={heroTextRef} className="hero-reveal text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-snow leading-none relative">
               {"KHORASAN".split("").map((char, i) => (
                 <span key={i} className="char inline-block">{char}</span>

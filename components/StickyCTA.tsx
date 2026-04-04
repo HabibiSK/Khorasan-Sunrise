@@ -2,23 +2,19 @@
 
 import { useState, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 
 export default function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false)
+  const { scrollY } = useScroll()
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 400) {
+      setIsVisible(true)
+    } else {
+      setIsVisible(false)
     }
-
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+  })
 
   return (
     <AnimatePresence>
