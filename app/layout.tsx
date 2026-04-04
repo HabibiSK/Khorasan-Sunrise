@@ -20,6 +20,7 @@ import CustomCursor from '../components/CustomCursor'
 import PageTransition from '../components/PageTransition'
 
 import MobileDock from '../components/MobileDock'
+import StickyCTA from '../components/StickyCTA'
 
 export default function RootLayout({
   children,
@@ -32,6 +33,7 @@ export default function RootLayout({
         <SharedBackground />
         <CustomCursor />
         <MobileDock />
+        <StickyCTA />
         <SmoothScroll>
           <Navbar />
           <main className="pt-0 overflow-hidden relative">

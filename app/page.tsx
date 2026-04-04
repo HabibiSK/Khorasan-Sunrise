@@ -119,8 +119,27 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero Text Animation
-      gsap.from(".hero-reveal", {
+      // Sunrise Glow Animation
+      gsap.to(".sunrise-glow", {
+        scale: 1,
+        opacity: 1,
+        duration: 2.5,
+        ease: "power2.out",
+        delay: 0.5
+      })
+
+      // Staggered Reveal for KHORASAN
+      gsap.from(".char", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+        stagger: 0.05,
+        delay: 0.2
+      })
+
+      // Hero Text Animation (excluding h1)
+      gsap.from(".hero-reveal:not(h1)", {
         y: 100,
         opacity: 0,
         duration: 1.5,
@@ -157,10 +176,16 @@ export default function Home() {
               Land of the Sunrise
             </span>
           </div>
-          <h1 ref={heroTextRef} className="hero-reveal text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-snow leading-none mb-8">
-            Khorasan <br />
-            <span className="text-sunrise">Sunrise</span>
-          </h1>
+          <div className="relative group mb-8">
+            <div className="sunrise-glow absolute inset-0 bg-sunrise/20 blur-[100px] rounded-full scale-0 opacity-0 pointer-events-none" />
+            <h1 ref={heroTextRef} className="hero-reveal text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-snow leading-none relative">
+              {"KHORASAN".split("").map((char, i) => (
+                <span key={i} className="char inline-block">{char}</span>
+              ))}
+              <br />
+              <span className="text-sunrise">Sunrise</span>
+            </h1>
+          </div>
           <p className="hero-reveal text-xl md:text-2xl text-snow/70 max-w-2xl mx-auto mb-12 leading-relaxed">
             Experience the soul of Afghanistan through authentic journeys, ancient history, and the warm hospitality of its people.
           </p>
