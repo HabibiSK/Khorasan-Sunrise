@@ -11,21 +11,21 @@ const TestimonialCarousel = () => {
       location: "New York, USA",
       text: "This journey changed my perspective on Afghanistan completely. The hospitality and culture are truly remarkable.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: "/images/hero-landscape.png"
     },
     {
       name: "Marcus Chen",
       location: "Toronto, Canada",
       text: "The attention to detail and authentic experiences exceeded all expectations. Highly recommended!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: "/images/tour-1.png"
     },
     {
       name: "Emma Rodriguez",
       location: "Barcelona, Spain",
       text: "From the moment we arrived, we felt welcomed as family. This is travel at its most authentic.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: "/images/tour-2.png"
     }
   ]
 

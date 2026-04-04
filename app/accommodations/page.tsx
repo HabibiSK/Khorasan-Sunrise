@@ -17,28 +17,28 @@ export default function AccommodationsPage() {
       location: "Heart of Kabul",
       description: "A beautifully restored traditional Afghan home in the heart of Kabul. Experience authentic Afghan hospitality in a historic setting.",
       features: ["Traditional architecture", "Garden courtyard", "Local cuisine", "Cultural immersion"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "/images/accommodation.png"
     },
     {
       name: "Herat House",
       location: "Ancient City of Herat",
       description: "Located in the historic district of Herat, this accommodation offers stunning views of the city's famous Friday Mosque.",
       features: ["Historic architecture", "Mosque views", "Artisan workshops", "Cultural tours"],
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "/images/hero-landscape.png"
     },
     {
       name: "Mazar House",
       location: "Northern Gateway",
       description: "A comfortable home in Mazar-i-Sharif, close to the stunning Blue Mosque and offering insights into northern Afghan culture.",
       features: ["Blue Mosque proximity", "Northern cuisine", "Cultural exchanges", "Market access"],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "/images/tour-1.png"
     },
     {
       name: "Bamyan Basecamp",
       location: "Valley of Buddhas",
       description: "Nestled in the Bamiyan Valley, this accommodation provides access to the famous Buddha statues and stunning mountain landscapes.",
       features: ["Mountain views", "Buddha site access", "Hiking trails", "Valley exploration"],
-      image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      image: "/images/tour-2.png"
     }
   ]
 

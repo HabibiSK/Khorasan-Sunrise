@@ -7,7 +7,7 @@ export default function HeartOfAfghanistan() {
       <section className="relative h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            src="/images/accommodation.png"
             alt="Afghanistan mountains"
             fill
             className="object-cover"
@@ -60,7 +60,7 @@ export default function HeartOfAfghanistan() {
             </div>
             <div>
               <Image
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/images/hero-landscape.png"
                 alt="Afghanistan culture"
                 width={600}
                 height={400}

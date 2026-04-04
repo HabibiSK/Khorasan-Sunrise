@@ -51,7 +51,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal-line">
             <div className="relative aspect-square overflow-hidden rounded-[3rem] shadow-2xl border border-snow/10">
               <Image 
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                src="/images/tour-2.png" 
                 alt="Afghan heritage"
                 fill
                 className="object-cover mask-radial"

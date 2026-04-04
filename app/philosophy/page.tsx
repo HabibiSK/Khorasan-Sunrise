@@ -51,7 +51,7 @@ export default function PhilosophyPage() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] shadow-2xl border border-snow/10">
                <Image 
-                 src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                 src="/images/hero-landscape.png" 
                  alt="Afghan empowerment"
                  fill
                  className="object-cover mask-radial"
@@ -72,7 +72,7 @@ export default function PhilosophyPage() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden rounded-[3rem] shadow-2xl border border-snow/10 md:order-1">
                <Image 
-                 src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
+                 src="/images/tour-1.png" 
                  alt="Afghan authenticity"
                  fill
                  className="object-cover mask-radial"

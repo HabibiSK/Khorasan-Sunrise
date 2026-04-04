@@ -86,7 +86,7 @@ export default function Home() {
       title: "Heart of the Sunrise",
       location: "Kabul & Panjshir Valley",
       description: "Experience the vibrant pulse of Kabul and the serene beauty of the emerald-colored Panjshir River. A journey through history and hospitality.",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/accommodation.png",
       duration: "10 Days",
       difficulty: "Medium",
       distance: "850km",
@@ -97,7 +97,7 @@ export default function Home() {
       title: "Ancient Herat Expedition",
       location: "Herat & Ghor Province",
       description: "Discover the architectural wonders of the Friday Mosque and the Minarets of Jam. An expedition for those who seek the whispers of the Silk Road.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
+      image: "/images/hero-landscape.png",
       duration: "12 Days",
       difficulty: "Easy",
       distance: "1,200km",
@@ -108,7 +108,7 @@ export default function Home() {
       title: "Bamyan Buddha Trail",
       location: "Bamyan Valley",
       description: "Witness the magnificent Buddha niches and the crystal-clear lakes of Band-e-Amir. A mystical landscape of red cliffs and blue water.",
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/tour-1.png",
       duration: "8 Days",
       difficulty: "Medium",
       distance: "450km",
@@ -238,7 +238,7 @@ export default function Home() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden my-32">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+            src="/images/tour-2.png"
             alt="Mountains"
             fill
             className="object-cover opacity-30 grayscale mask-radial"
@@ -271,7 +271,7 @@ export default function Home() {
               </div>
               <div className="flex-1 relative w-full h-[300px] md:h-[500px]">
                   <Image 
-                    src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
+                    src="/images/accommodation.png" 
                     alt="Ready"
                     fill
                     className="rounded-3xl object-cover mask-radial grayscale"
